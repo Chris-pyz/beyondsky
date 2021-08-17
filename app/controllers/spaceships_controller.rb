@@ -14,6 +14,7 @@ class SpaceshipsController < ApplicationController
 
   def create
     @spaceship = Spaceship.new(spaceship_params)
+    @spaceship.user = current_user
 
     if @spaceship.save
       redirect_to @spaceship, notice: 'spaceship was successfully created.'
@@ -22,10 +23,15 @@ class SpaceshipsController < ApplicationController
     end
   end
 
+  def destroy
+    @spaceship = Spaceship.find(params[:id])
+    @spaceship.destroy
+    redirect_to spaceships_path, notice: 'spaceship was successfully destroyed.'
+  end
+
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :address, :price, :capacity, :stading, :description)
+    params.require(:spaceship).permit(:name, :address, :price, :capacity, :standing, :description)
   end
-
 end
