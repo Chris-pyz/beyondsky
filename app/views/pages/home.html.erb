@@ -4,16 +4,14 @@
     <h1><strong>Welcome to BeyondSky  </strong>!</h1>
     <p>Change your life by renting a spaceship to travel the universe.</p>
     <a class="btn btn-flat" href="#">Rent Spaceship</a>
+    <% if user_signed_in? %>
+    <p>Hello <%=current_user.name%>, You are logged in</p>
+<% end %>
   </div>
 </div>
 
 <div class="main-container">
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% if user_signed_in? %>
-<p>Hello <%=current_user.email%>, You are logged in</p>
-<% end %>
-<p>Spaceship</p>
+<h1>Spaceship</h1>
 
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img3.acsta.net/r_1920_1080/newsv7/16/12/14/12/51/4970480.jpg)">
