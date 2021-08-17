@@ -7,6 +7,10 @@ Spaceship for rent
     <li>Address : <%= s.address %></li>
     <li>Capcity : <%= s.capacity %></li>
     <li>Standing : <%= s.standing %></li>
+    <br>
+    <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %>
     <hr>
 <% end %>
+
+
 </ul>
