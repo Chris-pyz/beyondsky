@@ -1,35 +1,44 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg);">
   <div class="container">
+
     <h1><strong>Welcome to BeyondSky  </strong>!</h1>
+    <% if user_signed_in? %>
+      <p>Hello <%=current_user.name%>,</p>
+    <% end %>
     <p>Change your life by renting a spaceship to travel the universe.</p>
-    <a class="btn btn-flat" href="#">Rent Spaceship</a>
+    <div class="search-bar"> # mettre à jour jeudi
+      <div class="search-form"><p>Address</p></div>
+      <div class="search-form"><p>Arrived time</p></div>
+      <div class="search-form"><p>Departure time</p> </div>
+      <div class="search-form"><p>Number of people</p> </div>
+      <div class="search-form"><%= link_to "Rent Spaceship", spaceships_path, class:"btn btn-rent" %>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="main-container">
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% if user_signed_in? %>
-<p>Hello <%=current_user.email%>, You are logged in</p>
-<% end %>
-<p>Spaceship</p>
+
+<h1>Discover our spaceships</h1>
+
+# ajouter lien show/id a chaque categorie
 
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img3.acsta.net/r_1920_1080/newsv7/16/12/14/12/51/4970480.jpg)">
-    Breakfast
+    Millenium Faucon
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img3.acsta.net/r_1920_1080/newsv7/16/12/14/13/22/0998940.jpg)">
+    J-type Star Skiff
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img4.acsta.net/r_1920_1080/newsv7/16/12/14/12/05/4799650.jpg)">
+    TIE X1 avancé
   </div>
 </div>
 
-<div class="card-offer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  Offer a Spaceship
+<div class="card-offer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img3.acsta.net/r_1920_1080/newsv7/16/12/14/12/30/1039550.jpg)">
+  <%= link_to "Offer a Spaceship experience", "#", class:"btn btn-offerspaceship" %>
 </div>
 </div>
