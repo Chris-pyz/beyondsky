@@ -1,1 +1,12 @@
 <h1>Here is the <%= @spaceship.name %></h1>
+
+<ul>
+    <li>Description :<%= @spaceship.description %></li>
+    <li>Address : <%= @spaceship.address %></li>
+    <li>Capacity : <%= @spaceship.capacity %></li>
+    <li>Standing : <%= @spaceship.standing %></li>
+    <li>Price : <%= @spaceship.price %> Royal Krystal</li>
+    <hr>
+</ul>
+
+<li><%= link_to 'Back', spaceships_path %></li>

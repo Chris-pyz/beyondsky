@@ -1,1 +1,12 @@
 Spaceship for rent
+
+<ul>
+<% @spaceships.each do |s| %>
+
+  <li><%= link_to s.name, spaceship_path(s.id) %></li>
+    <li>Address : <%= s.address %></li>
+    <li>Capcity : <%= s.capacity %></li>
+    <li>Standing : <%= s.standing %></li>
+    <hr>
+<% end %>
+</ul>
