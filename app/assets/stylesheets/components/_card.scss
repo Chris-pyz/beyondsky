@@ -6,11 +6,17 @@
 }
 
 .card-category {
-  width: 260px;
+  width: 350px;
   height: 250px;
   border-radius: 16px;
   margin-bottom: 55px;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  background-position: center;
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -47,18 +53,28 @@
   }
 }
 
-  .card-offer {
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 25px;
+.card-offer {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+  }
+
+.card-offer a {
+  color: white;
+  border: 2px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+
+  transition: opacity 0.3s ease;
   }
