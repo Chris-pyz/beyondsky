@@ -1,6 +1,35 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg);">
+  <div class="container">
+    <h1><strong>Welcome to BeyondSky  </strong>!</h1>
+    <p>Change your life by renting a spaceship to travel the universe.</p>
+    <a class="btn btn-flat" href="#">Rent Spaceship</a>
+  </div>
+</div>
+
+<div class="main-container">
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <% if user_signed_in? %>
 <p>Hello <%=current_user.email%>, You are logged in</p>
 <% end %>
 <p>Spaceship</p>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img3.acsta.net/r_1920_1080/newsv7/16/12/14/12/51/4970480.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
+  </div>
+</div>
+
+<div class="card-offer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  Offer a Spaceship
+</div>
+</div>
