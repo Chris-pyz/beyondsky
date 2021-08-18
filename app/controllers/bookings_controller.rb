@@ -21,10 +21,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.spaceship = @spaceship
     @booking.user = current_user
+    @booking.status = "pending owner confirmation"
 
     if @booking.save
 
-      redirect_to @spaceship, notice: 'booking was successfully created.'
+      redirect_to user_path(current_user), notice: 'booking was successfully created.'
     else
       render :new
 

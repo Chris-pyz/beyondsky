@@ -12,7 +12,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Become a host", "#", class: "nav-link" %> # ajout lien
+          <div class="navbar-links">
+          <%= link_to "Become a host", new_spaceship_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
+          </div>
         </li>
 
         <li class="nav-item dropdown">

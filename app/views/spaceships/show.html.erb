@@ -1,4 +1,6 @@
 <h1>Here is the <%= @spaceship.name %></h1>
+<%= link_to 'Back', spaceships_path %>
+
 
 <ul>
     <li>Description :<%= @spaceship.description %></li>
@@ -6,10 +8,11 @@
     <li>Capacity : <%= @spaceship.capacity %></li>
     <li>Standing : <%= @spaceship.standing %></li>
     <li>Price : <%= @spaceship.price %> Royal Krystal</li>
+
     <hr>
     <%# <li>Booking: <%= @booking.start_date%>
     <%# at <%= @booking.end_date %>
     <%# </li>  %>
+    <%# definir booking ds controller spaceship %>
 </ul>
-
-<li><%= link_to 'Back', spaceships_path %></li>
+<%= link_to 'Book Now!', new_spaceship_booking_path(@spaceship.id), class:"btn btn-booking" %>
