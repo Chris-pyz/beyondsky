@@ -1,0 +1,43 @@
+Bienvenue on your Dashboard !
+
+<%= @user.name %>
+
+<div class="main-container">
+
+  <div class="cards-show">
+
+  <div class="card-show-user">
+    <div class="user-info">photo et username
+      <img class="avatar-bordered" alt="avatar-bordered" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625512037/ltk4vcdsjkqw1icbihyo.jpg" />
+    </div>
+    <div class="user-valid-modify">valider et modifier</div>
+    <div class="user-logout">deconnexion</div>
+  </div>
+
+
+    <div class="card-show-option">
+      <div class="user-description"><p> Small user description</p></div>
+
+
+      <div class="user-orders-state">
+        <p>état de mes commandes</p>
+        <span>commande numéro, 'validé' le 'date'</span> <span>en attente</span>
+      </div>
+
+      <div class="previous-orders">
+        <p>My previous orders</p>
+        <span>commande numéro, 'validé' le 'date'</span> <span>en attente</span>
+      </div>
+      <hr>
+      <%= link_to "rent spaceship", spaceships_path, class: "rent-spaceship" %>
+      <hr>
+
+      <% if @user.spaceships.count >= 1  %>
+        <%= link_to "offer new spaceship experience", new_spaceship_path, class:"offer-spaceship" %>
+      <% else %>
+        <%= link_to "Become a host", new_spaceship_path, class:"offer-spaceship" %>
+      <% end %>
+      <hr>
+    </div>
+  </div>
+</div>

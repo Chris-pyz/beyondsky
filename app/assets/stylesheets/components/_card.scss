@@ -78,3 +78,59 @@
 
   transition: opacity 0.3s ease;
   }
+
+  // ------------------------------------------------
+
+.cards-show {
+  display: flex;
+  justify-content: center;
+}
+
+.card-show-user {
+  border: 1px solid red;
+  width: 300px;
+  height: 400px;
+  margin: 15px;
+  display: grid;
+  // align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.user-info {
+  height: 60px;
+}
+
+.card-show-option {
+  border: 1px solid red;
+  width: 450px;
+  height: 400px;
+  margin: 15px;
+  display: block;
+  // align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.user-description {
+  height: 30px;
+  width: 250px;
+  background-color: grey;
+  margin: 15px auto;
+}
+
+.user-orders-state {
+  margin: 10px auto;
+  border: 1px solid black;
+  border-radius: green;
+  width: 80%;
+  padding: 8px;
+}
+
+.previous-orders {
+  margin: 10px auto;
+  border: 1px solid black;
+  border-radius: green;
+  width: 80%;
+  padding: 8px;
+}
