@@ -21,7 +21,7 @@ class SpaceshipsController < ApplicationController
       info_window: render_to_string(partial: "info_window", locals: { spaceship: @spaceship }),
       image_url: helpers.asset_url('Beyondskylogo.png')
     }
-    raise
+
   end
 
   def new
