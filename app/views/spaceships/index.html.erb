@@ -1,22 +1,28 @@
-Spaceship for rent
+<div class="container_index">
+  <h1>Spaceship for rent</h1>
 
-<ul>
-<% @spaceships.each do |s| %>
+        <ul>
+        <% @spaceships.each do |s| %>
+        <div class="card_master">
+            <div class="card_list_all">
+              <h3><%= link_to s.name, spaceship_path(s.id) %></h3>
+                <div class="card_list">
+                  <li> Address : <%= s.address %></li>
+                  <li>Capacity : <%= s.capacity %></li>
+                  <li>Standing : <%= s.standing %></li>
 
-  <li><%= link_to s.name, spaceship_path(s.id) %></li>
-    <li>Address : <%= s.address %></li>
-    <li>Capcity : <%= s.capacity %></li>
-    <li>Standing : <%= s.standing %></li>
-    <br>
-    <%= link_to 'view details', spaceship_path(s.id) %>
-    <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <hr>
-<% end %>
+                  <p><%= link_to 'view details', spaceship_path(s.id) %> |
+                  <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                </div>
+            </div>
+          <div class="card_photo"></div>
+        </div>
+        <% end %>
+        </ul>
 
-</ul>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        <div id="map"
+            style="width: 100%; height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
 </div>

@@ -1,0 +1,23 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.card_master {
+	display: flex;
+  justify-content: space-between;
+	align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+
+}
+.card_photo{
+  background-color: grey;
+  padding: 80px;
+  border-radius: 5px;
+  border: 1px solid rgb(165, 49, 49);
+}
+
+.card_list{
+  margin-left: 40px;
+}
