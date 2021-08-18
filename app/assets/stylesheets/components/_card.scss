@@ -174,4 +174,22 @@ margin-top: 8px 0;
 
 .previous-orders {
   font-size: 13px
+// __________________________show spaceship card___________________
+
+.show-spaceship-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 450px;
+  width: 100%;
+
+}
+
+.photo_space_show {
+  margin-top: 25px;
+  height: 175px;
+  width: 375px;
+  background-color: blue;
+  border-radius: 16px;
 }
