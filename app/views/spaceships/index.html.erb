@@ -8,9 +8,11 @@ Spaceship for rent
     <li>Capcity : <%= s.capacity %></li>
     <li>Standing : <%= s.standing %></li>
     <br>
+    <%= link_to 'view details', spaceship_path(s.id) %>
     <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %>
     <hr>
 <% end %>
+
 </ul>
 
 <div id="map"
