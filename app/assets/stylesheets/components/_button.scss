@@ -1,0 +1,36 @@
+
+.button-show-spaceship {
+ width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.btn-booking {
+
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: hsl(209, 76%, 49%);
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.btn-booking:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-spaceship-index {
+
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: hsl(209, 76%, 49%);
+  transition: background 0.3s ease;
+}
+
+.btn-spaceship-index:hover {
+  background: #1BCB7F;
+  color: white;
+}
