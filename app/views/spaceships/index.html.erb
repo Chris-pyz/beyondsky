@@ -1,25 +1,29 @@
 <div class="container_index">
-  <h1>Spaceship for rent</h1>
+  <h1 style="background-image: url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg)" width:100% heigth 30px>Spaceship for rent</h1>
 
+<div class="card_master">
         <ul>
         <% @spaceships.each do |s| %>
-        <div class="card_master">
+
+         <div class="container_sp" style="background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url(https://i.pinimg.com/originals/ae/f6/b6/aef6b6dde84c41d04f2f41e414444bf0.jpg)">
             <div class="card_list_all">
               <h3><%= link_to s.name, spaceship_path(s.id) %></h3>
                 <div class="card_list">
                   <li> Address : <%= s.address %></li>
-                  <li>Capacity : <%= s.capacity %></li>
+                  <li>Capacity : <%= s.capacity %> person<%= s.capacity.to_i > 1 ? "s":"" %></li>
                   <li>Standing : <%= s.standing %></li>
 
                   <p><%= link_to 'view details', spaceship_path(s.id) %> |
                   <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 </div>
             </div>
-          <div class="card_photo"></div>
-        </div>
+                <div class="card_photo_back">
+                </div>
+          </div>
+
         <% end %>
         </ul>
-
+</div>
         <div id="map"
             style="width: 100%; height: 600px;"
             data-markers="<%= @markers.to_json %>"

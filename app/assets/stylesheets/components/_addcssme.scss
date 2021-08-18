@@ -1,23 +1,53 @@
 h1 {
   display: flex;
   justify-content: center;
+  margin: 10px;
+  margin-bottom: 30px;
+  background-size: cover;
+  padding: 10px;
+  color: blanchedalmond;
 }
-
+a {
+  text-decoration: none !important;
+}
 .card_master {
 	display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  //justify-content: space-between;
 	align-items: center;
-  margin-bottom: 10px;
-  margin-right: 10px;
 
 }
-.card_photo{
-  background-color: grey;
+.container_sp {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border: 1px solid blue;
+  border-radius: 0 10px 0 20px;
+  padding: 10px;
+  background-size: cover;
+}
+
+.container_sp:hover {
+  box-shadow: 0 0 5px red;
+}
+.card_list_all {
+  margin-right: 10px;
+}
+.card_photo_back{
+  background-color: rgb(183, 183, 183);
   padding: 80px;
   border-radius: 5px;
   border: 1px solid rgb(165, 49, 49);
+  transition-duration: 0.5s
 }
-
+.card_photo_back:hover {
+  border: 1px solid rgb(165, 49, 49);
+  //display: flex;
+  justify-content: center;
+  padding: 250px;
+  transition-duration: 0.5s
+}
 .card_list{
   margin-left: 40px;
+  list-style-type: none;
 }
