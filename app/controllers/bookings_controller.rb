@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.spaceship = @spaceship
     @booking.user = current_user
-    @booking.status = "pending owner confirmation"
+    @booking.status = "pending"
 
     if @booking.save
 
