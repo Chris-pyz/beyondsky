@@ -15,4 +15,12 @@
     <%# </li>  %>
     <%# definir booking ds controller spaceship %>
 </ul>
+
 <%= link_to 'Book Now!', new_spaceship_booking_path(@spaceship.id), class:"btn btn-booking" %>
+
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+

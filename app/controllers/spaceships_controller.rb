@@ -2,10 +2,26 @@ class SpaceshipsController < ApplicationController
 
   def index
     @spaceships = Spaceship.all
+        # the `geocoded` scope filters only spaceships with coordinates (latitude & longitude)
+    @markers = @spaceships.geocoded.map do |spaceship|
+      {
+        lat: spaceship.latitude,
+        lng: spaceship.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { spaceship: spaceship }),
+        image_url: helpers.asset_url('Beyondskylogo.png')
+      }
+    end
   end
 
   def show
     @spaceship = Spaceship.find(params[:id])
+    @markers = {
+      lat: @spaceship.latitude,
+      lng: @spaceship.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { spaceship: @spaceship }),
+      image_url: helpers.asset_url('Beyondskylogo.png')
+    }
+    raise
   end
 
   def new
