@@ -15,12 +15,13 @@ class SpaceshipsController < ApplicationController
 
   def show
     @spaceship = Spaceship.find(params[:id])
-    @markers = {
+    @markers = [{
       lat: @spaceship.latitude,
       lng: @spaceship.longitude,
       info_window: render_to_string(partial: "info_window", locals: { spaceship: @spaceship }),
       image_url: helpers.asset_url('Beyondskylogo.png')
-    }
+
+    }]
 
   end
 
