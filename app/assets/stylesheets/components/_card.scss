@@ -159,8 +159,6 @@ margin-top: 8px 0;
   width: 90%;
   padding: 15px;
   border-radius: 6px;
-
-
 }
 
 .user-orders-state p {
@@ -180,6 +178,18 @@ margin-top: 8px 0;
 .previous-orders {
   font-size: 13px
 }
+
+.owner-spaceships {
+  background-color: rgba(0, 0, 255, .2);
+  margin: 18px auto;
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 90%;
+  padding: 15px;
+  font-size: 13px
+
+}
+
 // __________________________show spaceship card___________________
 
 .show-spaceship-card {
