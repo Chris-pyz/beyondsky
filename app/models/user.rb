@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings # bookings as a client
   has_many :spaceships
+  has_one_attached :photo
+
   # has_many :reviews
 end
