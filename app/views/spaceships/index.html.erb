@@ -9,7 +9,7 @@
             <div class="card_list_all">
               <h3><%= link_to s.name, spaceship_path(s.id) %></h3>
                 <div class="card_list">
-                  <li> Address : <%= s.address %></li>
+                  <li>Address : <%= s.address %></li>
                   <li>Capacity : <%= s.capacity %> person<%= s.capacity.to_i > 1 ? "s":"" %></li>
                   <li>Standing : <%= s.standing %></li>
 
