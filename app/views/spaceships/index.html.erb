@@ -1,6 +1,33 @@
 <div class="container_index">
   <h1 style="background-image: url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg)" width:100% heigth 30px>Spaceship for rent</h1>
 
+<div class="search-bar"> # mettre à jour jeudi
+
+      <form action="spaceships#index" method="get">
+
+        <div class="search-form"><input class="" name="address" type="text" placeholder="address"></div>
+        <div class="search-form"><p>
+                  <div class="form-example date_search">
+                  <label for="start"> From: </label>
+                  <input type="date" id="start" name="activity_start"></p>
+                  </div>
+        </div>
+        <div class="search-form"><p>
+                  <div class="form-example date_search">
+                  <label for="start"> From: </label>
+                  <input type="date" id="start" name="activity_start"></p>
+                  </div></p>
+                  </div>
+
+
+        <div class="search-form"><input class="" name="capacity" type="text" placeholder="number of people"></div>
+
+        <div class="search-form"><button name="button" type="submit" class="btn-genevieve"></button>
+        </div>
+      </form>
+    </div>
+
+
 <div class="card_master">
         <ul>
         <% @spaceships.each do |s| %>

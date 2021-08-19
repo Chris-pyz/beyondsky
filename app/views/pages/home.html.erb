@@ -7,20 +7,45 @@
       <p>Hello <%=current_user.name%>,</p>
     <% end %>
     <p>Change your life by renting a spaceship to travel the universe.</p>
-    <div class="search-bar"> # mettre à jour jeudi
-      <div class="search-form"><p>Address</p></div>
-      <div class="search-form"><p>Arrived time</p></div>
-      <div class="search-form"><p>Departure time</p> </div>
-      <div class="search-form"><p>Number of people</p> </div>
-      <div class="search-form"><%= link_to "Rent Spaceship", spaceships_path, class:"btn btn-rent" %>
-      </div>
+    <div class="search-bar">
+
+      <form action="spaceships#index" method="get">
+
+        <div class="search-form"><input class="" name="address" type="text" placeholder="address"></div>
+        <div class="search-form"><p>
+                  <div class="form-example date_search">
+                  <label for="start"> From: </label>
+                  <input type="date" id="start" name="activity_start"></p>
+                  </div>
+        </div>
+        <div class="search-form"><p>
+                  <div class="form-example date_search">
+                  <label for="start"> From: </label>
+                  <input type="date" id="start" name="activity_start"></p>
+                  </div></p>
+                  </div>
+
+
+        <div class="search-form"><input class="" name="capacity" type="text" placeholder="number of people"></div>
+
+        <div class="search-form"><button name="button" type="submit" class="btn-genevieve"></button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
+
+
 <div class="main-container">
 
 <h1>Discover our spaceships</h1>
+
+
+
+
+
+
 
 
 
@@ -39,6 +64,6 @@
 </div>
 
 <div class="card-offer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://fr.web.img3.acsta.net/r_1920_1080/newsv7/16/12/14/12/30/1039550.jpg)">
-  <%= link_to "Offer a Spaceship experience", "#", class:"btn btn-offerspaceship" %>
+  <%= link_to "Offer a Spaceship experience", new_spaceship_path, class:"btn btn-offerspaceship" %>
 </div>
 </div>
