@@ -39,6 +39,21 @@ class SpaceshipsController < ApplicationController
     end
   end
 
+  # GET /spaceships/:id/edit  - edit_spaceship
+  def edit
+    @spaceship = Spaceship.find(params[:id])
+  end
+
+  # PATCH-PUT  /spaceships/:id
+  def update
+    @spaceship = Spaceship.find(params[:id])
+    if @spaceship.update(spaceship_params)
+      redirect_to @spaceship, notice: 'Spaceship was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @spaceship = Spaceship.find(params[:id])
     @spaceship.destroy
