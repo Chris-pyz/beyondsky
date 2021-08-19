@@ -21,7 +21,6 @@ class BookingsController < ApplicationController
     @booking.status = 'confirmed'
     @booking.save!
     redirect_to user_path(current_user), notice: 'booking was successfully confirmed.'
-
   end
 
   def create
