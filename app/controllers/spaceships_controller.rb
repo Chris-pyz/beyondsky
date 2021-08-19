@@ -15,12 +15,13 @@ class SpaceshipsController < ApplicationController
 
   def show
     @spaceship = Spaceship.find(params[:id])
-    @markers = {
+    @markers = [{
       lat: @spaceship.latitude,
       lng: @spaceship.longitude,
       info_window: render_to_string(partial: "info_window", locals: { spaceship: @spaceship }),
       image_url: helpers.asset_url('Beyondskylogo.png')
-    }
+
+    }]
 
   end
 
@@ -39,6 +40,21 @@ class SpaceshipsController < ApplicationController
     end
   end
 
+  # GET /spaceships/:id/edit  - edit_spaceship
+  def edit
+    @spaceship = Spaceship.find(params[:id])
+  end
+
+  # PATCH-PUT  /spaceships/:id
+  def update
+    @spaceship = Spaceship.find(params[:id])
+    if @spaceship.update(spaceship_params)
+      redirect_to @spaceship, notice: 'Spaceship was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @spaceship = Spaceship.find(params[:id])
     @spaceship.destroy
@@ -48,6 +64,6 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :address, :price, :capacity, :standing, :description)
+    params.require(:spaceship).permit(:name, :address, :price, :capacity, :standing, :description, photos: [])
   end
 end

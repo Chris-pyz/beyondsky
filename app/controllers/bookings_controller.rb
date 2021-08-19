@@ -16,6 +16,14 @@ class BookingsController < ApplicationController
     @spaceship = Spaceship.find(params[:spaceship_id])
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = 'confirmed'
+    @booking.save!
+    redirect_to user_path(current_user), notice: 'booking was successfully confirmed.'
+
+  end
+
   def create
     @spaceship = Spaceship.find(params[:spaceship_id])
     @booking = Booking.new(booking_params)
@@ -30,6 +38,12 @@ class BookingsController < ApplicationController
       render :new
 
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to user_path(current_user), notice: 'booking was successfully deleted.'
   end
 
   private

@@ -9,11 +9,14 @@
     <h1>Here is the <%= @spaceship.name %></h1>
         <li>Description :<%= @spaceship.description %></li>
         <li>Address : <%= @spaceship.address %></li>
-        <li>Capacity : <%= @spaceship.capacity %></li>
+        <li>Capacity : <%= @spaceship.capacity %> person<%= @spaceship.capacity.to_i > 1 ? "s":"" %></li>
         <li>Standing : <%= @spaceship.standing %></li>
         <li>Price : <%= @spaceship.price %> Royal Krystal</li>
-
-    <div class="photo_space_show"></div>
+    <div class="photo_space_show">
+      <% @spaceship.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
   </div>
     <div id="map"
         style="width: 100%; height: 450px;"
