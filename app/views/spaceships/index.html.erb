@@ -13,8 +13,11 @@
                   <li>Capacity : <%= s.capacity %> person<%= s.capacity.to_i > 1 ? "s":"" %></li>
                   <li>Standing : <%= s.standing %></li>
 
-                  <p><%= link_to 'view details', spaceship_path(s.id) %> |
-                  <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                  <p><%= link_to 'view details', spaceship_path(s.id) %>
+
+                  <% if policy(s).destroy? %>
+                    <%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' }  %></p>
+                  <% end %>
                 </div>
             </div>
                 <div class="card_photo_back">

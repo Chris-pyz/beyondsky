@@ -1,8 +1,11 @@
 class SpaceshipsController < ApplicationController
 
+
   def index
     @spaceships = Spaceship.all
-        # the `geocoded` scope filters only spaceships with coordinates (latitude & longitude)
+    # authorize @spaceship
+    @spaceships = policy_scope(Spaceship)
+    # the `geocoded` scope filters only spaceships with coordinates (latitude & longitude)
     @markers = @spaceships.geocoded.map do |spaceship|
       {
         lat: spaceship.latitude,
@@ -15,6 +18,9 @@ class SpaceshipsController < ApplicationController
 
   def show
     @spaceship = Spaceship.find(params[:id])
+    authorize @spaceship
+
+
     @markers = [{
       lat: @spaceship.latitude,
       lng: @spaceship.longitude,
@@ -22,16 +28,18 @@ class SpaceshipsController < ApplicationController
       image_url: helpers.asset_url('Beyondskylogo.png')
 
     }]
-
   end
 
   def new
     @spaceship = Spaceship.new
+    authorize @spaceship
   end
 
   def create
     @spaceship = Spaceship.new(spaceship_params)
     @spaceship.user = current_user
+    authorize @spaceship
+
 
     if @spaceship.save
       redirect_to @spaceship, notice: 'spaceship was successfully created.'
@@ -43,11 +51,13 @@ class SpaceshipsController < ApplicationController
   # GET /spaceships/:id/edit  - edit_spaceship
   def edit
     @spaceship = Spaceship.find(params[:id])
+    authorize @spaceship
   end
 
   # PATCH-PUT  /spaceships/:id
   def update
     @spaceship = Spaceship.find(params[:id])
+    authorize @spaceship
     if @spaceship.update(spaceship_params)
       redirect_to @spaceship, notice: 'Spaceship was successfully updated.'
     else
@@ -57,6 +67,7 @@ class SpaceshipsController < ApplicationController
 
   def destroy
     @spaceship = Spaceship.find(params[:id])
+    authorize @spaceship
     @spaceship.destroy
     redirect_to spaceships_path, notice: 'spaceship was successfully destroyed.'
   end
