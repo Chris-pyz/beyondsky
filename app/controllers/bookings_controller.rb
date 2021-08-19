@@ -3,17 +3,20 @@ class BookingsController < ApplicationController
   # /spaceships/:spaceship_id/bookings
   def index
     @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   # spaceships/:spaceship_id/bookings/:id
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   # /spaceships/:id/bookings/new
   def new
     @booking = Booking.new
     @spaceship = Spaceship.find(params[:spaceship_id])
+    authorize @booking
   end
 
   def accept
@@ -21,7 +24,6 @@ class BookingsController < ApplicationController
     @booking.status = 'confirmed'
     @booking.save!
     redirect_to user_path(current_user), notice: 'booking was successfully confirmed.'
-
   end
 
   def create
@@ -30,6 +32,7 @@ class BookingsController < ApplicationController
     @booking.spaceship = @spaceship
     @booking.user = current_user
     @booking.status = "pending"
+    authorize @booking
 
     if @booking.save
 
@@ -42,6 +45,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
     redirect_to user_path(current_user), notice: 'booking was successfully deleted.'
   end
