@@ -2,11 +2,12 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg);">
   <div class="container">
 
-    <h1><strong>Welcome to BeyondSky  </strong>!</h1>
+    <h1><strong>Welcome to BeyondSky</strong>!</h1>
     <% if user_signed_in? %>
       <p>Hello <%=current_user.name%>,</p>
     <% end %>
     <p>Change your life by renting a spaceship to travel the universe.</p>
+
     <div class="search-bar">
 
       <form action="spaceships#index" method="get">
@@ -24,7 +25,6 @@
                   <input type="date" id="start" name="activity_start"></p>
                   </div></p>
                   </div>
-
 
         <div class="search-form"><input class="" name="capacity" type="text" placeholder="number of people"></div>
 
