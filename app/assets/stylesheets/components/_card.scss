@@ -79,58 +79,123 @@
   transition: opacity 0.3s ease;
   }
 
-  // ------------------------------------------------
+  // ---------------------dashboard---------------------------
+
 
 .cards-show {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .card-show-user {
-  border: 1px solid red;
+  border: 2px solid grey;
   width: 300px;
-  height: 400px;
+  // height: 450px;
   margin: 15px;
   display: grid;
   // align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
 }
 
+
 .user-info {
+  height: 175px;
+  display: grid;
+  justify-content: center;
+  margin: 12px 0;
+  padding: 4px;
+}
+
+.user-info p {
+margin-top: 8px 0;
+}
+
+.user-valid-modify {
   height: 60px;
+  display: grid;
+  justify-content: center;
 }
 
 .card-show-option {
-  border: 1px solid red;
-  width: 450px;
-  height: 400px;
+  border: 2px solid grey;
+  width: 550px;
+  // height: 450px;
   margin: 15px;
   display: block;
   // align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 255, .2);
+  padding: 20px;
+  p {
+    margin: 0;
+  }
+
 }
 
 .user-description {
-  height: 30px;
+  color: white;
+  border-radius: 8px;
+  height: 45px;
   width: 250px;
-  background-color: grey;
+  background-color: #194185;
   margin: 15px auto;
+  padding: 4px;
+
 }
 
 .user-orders-state {
+  background-color: rgba(0, 0, 255, .2);
   margin: 10px auto;
   border: 1px solid black;
   border-radius: green;
-  width: 80%;
-  padding: 8px;
+  width: 90%;
+  padding: 15px;
+  border-radius: 6px;
+
+
+}
+
+.user-orders-state p {
+  font-size: 13px;
+  margin: 0;
 }
 
 .previous-orders {
-  margin: 10px auto;
+  background-color: rgba(0, 0, 255, .2);
+  margin: 18px auto;
   border: 1px solid black;
-  border-radius: green;
-  width: 80%;
-  padding: 8px;
+  border-radius: 6px;
+  width: 90%;
+  padding: 15px;
+}
+
+.previous-orders {
+  font-size: 13px
+}
+// __________________________show spaceship card___________________
+
+.show-spaceship-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 450px;
+  width: 100%;
+
+}
+
+.photo_space_show {
+  margin-top: 25px;
+  height: 175px;
+  width: 375px;
+  background-color: blue;
+  border-radius: 16px;
 }

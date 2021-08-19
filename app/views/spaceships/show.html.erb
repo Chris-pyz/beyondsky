@@ -1,26 +1,31 @@
-<h1>Here is the <%= @spaceship.name %></h1>
-<%= link_to 'Back', spaceships_path %>
+<div class="space-show-container">
 
 
-<ul>
-    <li>Description :<%= @spaceship.description %></li>
-    <li>Address : <%= @spaceship.address %></li>
-    <li>Capacity : <%= @spaceship.capacity %></li>
-    <li>Standing : <%= @spaceship.standing %></li>
-    <li>Price : <%= @spaceship.price %> Royal Krystal</li>
-
-    <hr>
-    <%# <li>Booking: <%= @booking.start_date%>
-    <%# at <%= @booking.end_date %>
-    <%# </li>  %>
-    <%# definir booking ds controller spaceship %>
-</ul>
-
-<%= link_to 'Book Now!', new_spaceship_booking_path(@spaceship.id), class:"btn btn-booking" %>
 
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="display_flex">
+ <div class="show-spaceship-card">
 
+    <h1>Here is the <%= @spaceship.name %></h1>
+        <li>Description :<%= @spaceship.description %></li>
+        <li>Address : <%= @spaceship.address %></li>
+        <li>Capacity : <%= @spaceship.capacity %></li>
+        <li>Standing : <%= @spaceship.standing %></li>
+        <li>Price : <%= @spaceship.price %> Royal Krystal</li>
+
+    <div class="photo_space_show"></div>
+  </div>
+    <div id="map"
+        style="width: 100%; height: 450px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
+<div class="button-show-spaceship">
+    <%= link_to 'BOOK NOW', new_spaceship_booking_path(@spaceship.id), class:"btn btn-booking" %>
+    <%= link_to 'Back List Spaceships', spaceships_path, class:"btn btn-spaceship-index" %>
+</div>
+
+
+
+</div>
