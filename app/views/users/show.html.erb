@@ -26,41 +26,24 @@
         <p><u>My current orders</u></p>
 
           <% @user.bookings.each do |booking| %>
-            <p><strong>Order id</strong> : <%=booking.id %>, <%= booking.spaceship.name %> du <%= booking.start_date %> au <%= booking.end_date %>, <strong>statut</strong>: <%= booking.status %><% if booking.spaceship.user == current_user %><%= link_to 'Accept', "/bookings/#{booking.id}/accept", data: { confirm: 'Are you sure you want to confirm ??' } %><% end %> | <% if booking.user == current_user %> <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %><% end %></p>
+            <p><strong>Order id</strong> : <%=booking.id %>, <%= booking.spaceship.name %> du <%= booking.start_date %> au <%= booking.end_date %>, <strong>statut</strong>: <%= booking.status %> </p>
           <% end %>
-
       </div>
 
       <div class="previous-orders">
         <p><u>My previous orders</u></p>
         <% @user.bookings.each do |booking| %>
-        <% if booking.status == 'confirmed' %>
-          <p><strong>Order id</strong> : <%=booking.id %>, <%= booking.spaceship.name %> du <%= booking.start_date %> au <%= booking.end_date %>, <strong>statut</strong>: <%= booking.status %></p> | <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %> </p></p>
-        <% end %>
-
+          <p><strong>Order id</strong> : <%=booking.id %>, <%= booking.spaceship.name %> du <%= booking.start_date %> au <%= booking.end_date %>, <strong>statut</strong>: <%= booking.status %> </p>
         <% end %>
       </div>
       <%= link_to "rent spaceship", spaceships_path, class: "btn-genevieve"  %>
       <hr>
 
-      <% if @user.spaceships.any?  %>
+      <% if @user.spaceships.count >= 1  %>
         <%= link_to "offer new spaceship experience", new_spaceship_path, class:"btn-genevieve" %>
       <% else %>
-        <%= link_to "Become a host", new_spaceship_path, class:"btn-genevieve" %>
+        <%= link_to "Become a host", new_spaceship_path, class:"offer-spaceship" %>
       <% end %>
-
-      <div class="owner-spaceships">
-        <p><u>My spaceships</u></p>
-
-         <% @user.spaceships.each do |spaceship| %>
-            <strong>id</strong>: <%= spaceship.id%>, <%= spaceship.name %>, <strong>standing</strong>: <%= spaceship.standing%>, <strong>price</strong>: <%= spaceship.price %>
-          | <% if spaceship.user == current_user %> <%= link_to 'Delete', spaceship_path(spaceship), method: :delete, data: { confirm: 'Are you sure?' } %> <% end %>
-          <br>
-
-          <% end %>
-
-      </div>
-
     </div>
   </div>
 </div>
