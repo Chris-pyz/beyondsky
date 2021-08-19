@@ -1,11 +1,34 @@
 <div class="container_index">
   <h1 style="background-image: url(https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/shutterstock_471693773.jpg)" width:100% heigth 30px>Spaceship for rent</h1>
 
+<div class="search-bar mb-250">
+
+      <form action="spaceships#index" method="get">
+
+        <div class="search-form"><input class="" name="address" type="text" placeholder="address"></div>
+
+        <div class="search-form"><input class="" name="capacity" type="text" placeholder="number of people"></div>
+
+        <div class="search-form"><button name="button" type="submit" class="btn-genevieve"></button>
+        </div>
+      </form>
+
+      <div class="form-wrapper mb-250" style="width: 400px; margin: 0 auto;">
+        <h2>Flatpickr Demo</h2>
+
+      <%= simple_form_for :search, method: "get" do |f| %>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Go", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+</div>
+
 <div class="card_master">
         <ul>
         <% @spaceships.each do |s| %>
 
-         <div class="container_sp" style="background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url(https://i.pinimg.com/originals/ae/f6/b6/aef6b6dde84c41d04f2f41e414444bf0.jpg)">
+         <div class="container_sp mt-250" style="background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url(https://i.pinimg.com/originals/ae/f6/b6/aef6b6dde84c41d04f2f41e414444bf0.jpg)">
             <div class="card_list_all">
               <h3><%= link_to s.name, spaceship_path(s.id) %></h3>
                 <div class="card_list">

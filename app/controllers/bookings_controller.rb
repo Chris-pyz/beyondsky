@@ -2,6 +2,16 @@ class BookingsController < ApplicationController
 
   # /spaceships/:spaceship_id/bookings
   def index
+  # if params[:address].present? && params[:capacity].present?
+  #   @spaceships = Spaceship.search_by_address(params[:address])
+  # elsif params[:address].present?
+  #   @spaceships = Spaceship.search_by_address(params[:address])
+  # else
+  #   @spaceships = Spaceship.all
+  # end
+
+
+
     @bookings = Booking.all
     @bookings = policy_scope(Booking)
   end
@@ -42,6 +52,7 @@ class BookingsController < ApplicationController
 
     end
   end
+
 
   def destroy
     @booking = Booking.find(params[:id])

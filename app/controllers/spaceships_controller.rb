@@ -2,10 +2,20 @@ class SpaceshipsController < ApplicationController
 
 
   def index
+  if params[:address].present? && params[:capacity].present?
+    @spaceships = Spaceship.search_by_address(params[:address])
+  elsif params[:address].present?
+    @spaceships = Spaceship.search_by_address(params[:address])
+  else
     @spaceships = Spaceship.all
+
+  end
+        # the `geocoded` scope filters only spaceships with coordinates (latitude & longitude)
+
     # authorize @spaceship
     @spaceships = policy_scope(Spaceship)
     # the `geocoded` scope filters only spaceships with coordinates (latitude & longitude)
+
     @markers = @spaceships.geocoded.map do |spaceship|
       {
         lat: spaceship.latitude,
