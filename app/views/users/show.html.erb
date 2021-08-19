@@ -1,6 +1,6 @@
 
 
-<div class="main-container">
+<div class="show-user-container">
 
 <p>Welcome <%= @user.name %>! this is your own profile page.</p>
 
@@ -36,11 +36,11 @@
           <p><strong>Order id</strong> : <%=booking.id %>, <%= booking.spaceship.name %> du <%= booking.start_date %> au <%= booking.end_date %>, <strong>statut</strong>: <%= booking.status %> </p>
         <% end %>
       </div>
-      <%= link_to "rent spaceship", spaceships_path, class: "btn btn-rent"  %>
+      <%= link_to "rent spaceship", spaceships_path, class: "btn-genevieve"  %>
       <hr>
 
       <% if @user.spaceships.count >= 1  %>
-        <%= link_to "offer new spaceship experience", new_spaceship_path, class:"btn btn-offer" %>
+        <%= link_to "offer new spaceship experience", new_spaceship_path, class:"btn-genevieve" %>
       <% else %>
         <%= link_to "Become a host", new_spaceship_path, class:"offer-spaceship" %>
       <% end %>
