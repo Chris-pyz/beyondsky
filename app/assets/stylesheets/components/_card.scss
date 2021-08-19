@@ -193,19 +193,43 @@ margin-top: 8px 0;
 // __________________________show spaceship card___________________
 
 .show-spaceship-card {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: space-between;
+  // flex-direction: column;
   height: 450px;
   width: 100%;
 
 }
+.show-spaceship-card li {
+list-style-type: none;
+font-size: 20px;
+margin-bottom: 12px;
+margin-top: 12px;
+margin-left: 25px;
+}
+.show-spaceship-card h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+  // margin-top: 16px;
+}
 
-.photo_space_show {
-  margin-top: 25px;
-  height: 175px;
-  width: 375px;
-  background-color: blue;
+// .space-show-container h2 {
+//   margin-left: 25px;
+//   font-size: 20px;
+//   margin-bottom: 12px;
+//   margin-top: 12px;
+// }
+
+.cardshow {
   border-radius: 16px;
+  margin-top: 50px;
+  background-color: lavender;
+}
+
+.card-carousel {
+  height: 400px;
+  width: 800px;
+  margin: auto;
 }
