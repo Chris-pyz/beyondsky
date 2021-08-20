@@ -1,7 +1,9 @@
 .form-spaceship {
+  background-color: #f8f8f8;
   width: 350px;
+  height: auto;
   border-radius: 16px;
-  margin-bottom: 55px;
+  // margin-bottom: 55px;
   display: flex;
   justify-content: center;
   border: 0px solid black;
@@ -14,22 +16,41 @@
 }
 
 .form-container {
-  background-color: #432944;
-  background: rgba(255,255,255,0.4);
-  padding-top: 53px;
+  width: 1200px;
+  background-color: lavender;
+  margin: 0 auto;
+  min-height: 67vh;
   height: auto;
-  margin: 30px;
+  padding-top: 0;
 }
 
 
 .form-control {
   border:0px solid red;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border-bottom: 1px solid black;
 }
 
-.form-actions {
+.form-action {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+  color: #432944;
+  background-color: lavender;
+  box-shadow: 0 0 6px rgba(10, 7, 7, 0.5);
+  border-radius: 6px;
+  font-weight: bolder;
+  padding: 8px 24px;
+}
+
+.form-container h2 {
+  color: white;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+
 }
