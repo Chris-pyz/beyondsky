@@ -42,3 +42,46 @@ margin-top: 40px;
   color: white;
   padding: 8px 24px;
 }
+
+// ---------------------------------devise/sessions/new/----------------------
+
+.btn-session-new {
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+  color:#432944;
+  background-color: lavender;
+  box-shadow: 0 0 6px rgba(10, 7, 7, 0.5);
+  border-radius: 6px;
+  font-weight: bolder;
+  padding: 8px 24px;
+}
+
+.btn-global-session-new {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+// ------------------------------devise/registration/new/---------------------
+.btn-registration-new {
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+  color: #432944;
+  background-color: lavender;
+  box-shadow: 0 0 6px rgba(10, 7, 7, 0.5);
+  border-radius: 6px;
+  font-weight: bolder;
+  padding: 8px 24px;
+}
+
+.btn-global-registration-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -75,6 +75,7 @@ class SpaceshipsController < ApplicationController
       render :edit
     end
   end
+  # update pas!!
 
   def destroy
     @spaceship = Spaceship.find(params[:id])
