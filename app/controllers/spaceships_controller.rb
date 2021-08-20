@@ -8,7 +8,6 @@ class SpaceshipsController < ApplicationController
       @spaceships = policy_scope(Spaceship.search_by_address(params[:address]))
     elsif params[:capacity].present?
       @spaceships = policy_scope(Spaceship.where(capacity: params[:capacity]))
-
     else
       # authorize @spaceship
       @spaceships = policy_scope(Spaceship)
