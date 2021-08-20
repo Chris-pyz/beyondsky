@@ -31,8 +31,10 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.status = 'confirmed'
     @booking.save!
+
     redirect_to user_path(current_user), notice: 'booking was successfully confirmed.'
   end
 
