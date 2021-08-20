@@ -40,7 +40,7 @@
                   </div>
               </div>
               <% if s.photos.attached? %>
-                 <div class="card_photo_back" style="background-image:url('<%= cl_image_tag s.photos.first.key,crop: :fit %>')">
+                 <div class="card_photo_back" style="background-image:url('<%= cl_image_path s.photos[0].key,crop: :fit %>')">
                 </div>
                 <% end %>
             </div>
