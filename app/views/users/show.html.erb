@@ -39,7 +39,7 @@
         <p><u>My spaceships</u></p>
          <% @user.spaceships.each do |spaceship| %>
             <strong>id</strong>: <%= spaceship.id%>, <%= spaceship.name %>, <strong>standing</strong>: <%= spaceship.standing%>, <strong>price</strong>: <%= spaceship.price %>
-                  <% if spaceship.user == current_user %><%= link_to "Update", new_spaceship_path %><% end %>
+                  <% if spaceship.user == current_user %><%= link_to "Update", edit_spaceship_path(spaceship) %><% end %>
 | <% if spaceship.user == current_user %> <%= link_to 'Delete', spaceship_path(spaceship), method: :delete, data: { confirm: 'Are you sure?' } %> <% end %>
           <br>
           <% end %>
