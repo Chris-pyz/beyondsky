@@ -1,7 +1,8 @@
 .form-spaceship {
+  background-color: white;
   width: 350px;
   border-radius: 16px;
-  margin-bottom: 55px;
+  // margin-bottom: 25px;
   display: flex;
   justify-content: center;
   border: 0px solid black;
@@ -14,11 +15,16 @@
 }
 
 .form-container {
-  background-color: #432944;
-  background: rgba(255,255,255,0.4);
-  padding-top: 53px;
-  height: auto;
-  margin: 30px;
+  //background-color: #432944;
+  //background: rgba(255,255,255,0.4);
+  // padding-top: 53px;
+  // height: auto;
+  // margin: 30px;
+   width: 1200px;
+  //  margin: 50px auto;
+   min-height: 67vh;
+   height: auto;
+   background-color: lavender;
 }
 
 
@@ -31,5 +37,20 @@
 .form-actions {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+  transition: background 0.3s ease;
+  // margin-bottom: 15px;
+  color:#432944;
+  background-color: lavender;
+  box-shadow: 0 0 6px rgba(10, 7, 7, 0.5);
+  border-radius: 6px;
+  font-weight: bolder;
+  padding: 8px 24px;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
 }
