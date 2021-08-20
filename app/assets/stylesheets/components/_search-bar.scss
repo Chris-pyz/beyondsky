@@ -1,17 +1,21 @@
 .search-bar {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   display: flex;
   align-items: center;
   padding: 15px;
+  width: 1150px;
+  border-radius: 32px;
 }
 
 .search-form {
   border: none;
+  width: 230px;
+  padding: 10px 0px;
 
   input {
   border: none;
   text-align: center;
-  width: auto;
+  width: 65%;
 
 }
 }
