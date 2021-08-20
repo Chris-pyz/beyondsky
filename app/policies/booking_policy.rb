@@ -6,6 +6,10 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def accept?
+    true
+  end
+
   def new?
     true
   end

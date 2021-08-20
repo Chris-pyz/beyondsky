@@ -10,3 +10,5 @@ Rails.application.routes.draw do
     resources :bookings, except: [:destroy]
   end
 end
+
+
