@@ -70,7 +70,7 @@ class SpaceshipsController < ApplicationController
     @spaceship = Spaceship.find(params[:id])
     authorize @spaceship
     if @spaceship.update(spaceship_params)
-      redirect_to spaceship_path, notice: 'Spaceship was successfully updated.'
+      redirect_to @spaceship, notice: 'Spaceship was successfully updated.'
     else
       render :edit
     end
