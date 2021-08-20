@@ -3,6 +3,7 @@
           <div id="carouselExampleControls" class="carousel slide carousel-fade " data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
+              <% if @spaceship.photos.attached? %>
                 <%= cl_image_tag @spaceship.photos[0].key, height: 400, width: 800, crop: :fill %>
               </div>
               <% if @spaceship.photos.count > 1 %>
@@ -11,6 +12,7 @@
                       <%= cl_image_tag photo.key, height: 400, width: 800, crop: :fill %>
                     </div>
                   <% end %>
+              <% end %>
               <% end %>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -28,14 +30,6 @@
     <div class="display_flex">
 
       <div class="show-spaceship-card">
-          <h1>Here is the <%= @spaceship.name %></h1>
-
-          <li>Description :<%= @spaceship.description %></li>
-
-          <li>Address :<%= @spaceship.address %></li>
-
-
-          <li>Capacity :<%= @spaceship.capacity %></li>
 
     <h1>Here is the <%= @spaceship.name %></h1>
         <li>Description :<%= @spaceship.description %></li>
@@ -43,11 +37,7 @@
         <li>Capacity : <%= @spaceship.capacity %> person<%= @spaceship.capacity.to_i > 1 ? "s":"" %></li>
         <li>Standing : <%= @spaceship.standing %></li>
         <li>Price : <%= @spaceship.price %> Royal Krystal</li>
-    <div class="photo_space_show">
-      <% @spaceship.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    </div>
+
   </div>
     <div id="map"
         style="width: 100%; height: 450px;"
@@ -60,21 +50,4 @@
     <%= link_to 'Back List Spaceships', spaceships_path, class:"btn btn-spaceship-index" %>
 </div>
 
-
-          <li>Standing :<%= @spaceship.standing %></li>
-
-          <li>Price :<%= @spaceship.price %>$</li>
-      </div>
-        <div id="map"
-          style="width: 100%; height: 450px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
-
-          <div class="button-show-spaceship">
-          <%= link_to 'BOOK NOW', new_spaceship_booking_path(@spaceship.id), class:"btn btn-booking" %>
-          <%= link_to 'Back List Spaceships', spaceships_path, class:"btn btn-spaceship-index" %>
-        </div>
-    </div>
 </div>
