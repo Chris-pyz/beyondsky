@@ -8,30 +8,23 @@
     <% end %>
     <p>Change your life by renting a spaceship to travel the universe.</p>
 
-    <div class="search-bar">
+      <div class="search-bar">
 
-      <form action="spaceships#index" method="get">
+          <form action="spaceships#index" method="get" class="form-index-spaceships">
 
-        <div class="search-form"><input class="" name="address" type="text" placeholder="address"></div>
-        <div class="search-form"><p>
-                  <div class="form-example date_search">
-                  <label for="start"> From: </label>
-                  <input type="date" id="start" name="activity_start"></p>
-                  </div>
-        </div>
-        <div class="search-form"><p>
-                  <div class="form-example date_search">
-                  <label for="start"> From: </label>
-                  <input type="date" id="start" name="activity_start"></p>
-                  </div></p>
-                  </div>
+            <div class="search-form"><input class="" name="address" type="text" placeholder="address"></div>
+            <div class="search-form"><input class="" name="capacity" type="text" placeholder="number of people"></div>
+            <div class="search-form"><input class="datepicker" name="starts_at" required="false" ></div>
+            <div class="search-form"><input class="datepicker" name="ends_at" required="false" ></div>
 
-        <div class="search-form"><input class="" name="capacity" type="text" placeholder="number of people"></div>
+            <div class="search-form"><button name="button" type="submit" class="btn-genevieve">Search</button></div>
 
-        <div class="search-form"><button name="button" type="submit" class="btn-genevieve"></button>
-        </div>
-      </form>
-    </div>
+          </form>
+
+      </div>
+
+
+
   </div>
 </div>
 
